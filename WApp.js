@@ -30,14 +30,14 @@ function WApp(props) {
     let userLocation = query !== "" ?"q="+query:"lat=14.75&lon=-17.30";
     const handleSubmit = (event)=>{
         event.preventDefault();
-        fetch(`https://api.openweathermap.org/data/2.5/weather?appid=a6e9e8c1daae5ca1e696b38868847d44&${userLocation}&aqi=yes&units=metric&lang=fr`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?appid=${process.env.REACT_APP_API_KEY}&${userLocation}&aqi=yes&units=metric&lang=fr`)
             .then(res => res.json())
             .then(result => {
                 setCurrentWeather(result);
                 //   setQuery('');
                 console.log(result);
             });
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?appid=a6e9e8c1daae5ca1e696b38868847d44&${userLocation}&aqi=yes&cnt=3&units=metric&lang=fr`)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?appid=${process.env.REACT_APP_API_KEY}&${userLocation}&aqi=yes&cnt=3&units=metric&lang=fr`)
             .then(res => res.json())
             .then(result => {
                 setForecast(result)
@@ -56,7 +56,7 @@ function WApp(props) {
         }
         
 
-        fetch(`https://api.openweathermap.org/data/2.5/weather?appid=a6e9e8c1daae5ca1e696b38868847d44&lat=14.75&lon=-17.30&aqi=yes&units=metric&lang=fr`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?appid=${process.env.REACT_APP_API_KEY}&lat=14.75&lon=-17.30&aqi=yes&units=metric&lang=fr`)
             .then(res => res.json())
             .then(result => {
                 setCurrentWeather(result);
@@ -66,7 +66,7 @@ function WApp(props) {
         //console.log(lat + " " + long)
         // 14.7161088,-17.4424064
 
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?appid=a6e9e8c1daae5ca1e696b38868847d44&lat=14.75&lon=-17.30&aqi=yes&cnt=3&units=metric&lang=fr`)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?appid=${process.env.REACT_APP_API_KEY}&lat=14.75&lon=-17.30&aqi=yes&cnt=3&units=metric&lang=fr`)
             .then(res => res.json())
             .then(result => {
                 setForecast(result)
@@ -77,7 +77,7 @@ function WApp(props) {
 
     const weatherForecast = typeof(forecat.list) !== "undefined"? forecat.list.map((data, index) => {
         return (
-            <div key={index} className="city-widget fading">
+            <div style={{justifySelf: "auto"}} key={index} className="city-widget fading">
                 <div>
                     <p className="city-name">{data.dt_txt}</p>
                     <span> <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`}></img> </span>

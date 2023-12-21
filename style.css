@@ -41,7 +41,8 @@ body {
     /* display: grid;
     grid-template-columns: auto auto;
     grid-gap: 10px 5px; */
-    margin: 20px auto;
+    position: relative;
+    margin:30px auto ;
     width: 98%;
     display: flex;
     flex-flow: row wrap;
