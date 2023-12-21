@@ -1,0 +1,156 @@
+body {
+    min-height: 1000px;
+    margin: 0px;
+    box-sizing: border-box;
+    /* background-color: linear-gradient(rgb(25,85,197),rgb(88,132,217)); */
+    background-repeat: no-repeat;
+    background: linear-gradient(rgb(25, 85, 197), rgb(88, 132, 217));
+    color: azure;
+}
+
+
+.app-name {
+    color: azure;
+    text-align: center;
+}
+
+.current-weather>.city-widget {
+    border-radius: 11px;
+    background: linear-gradient(rgb(230, 230, 230, 0.4), rgb(136, 178, 255, 0.2));
+    color: azure;
+    display: inline-block;
+    min-height: 140px;
+    width: 50%;
+    padding: 5px 5px;
+}
+
+.city-name {
+    font-size: 22px;
+}
+
+.city-widget {
+    border-radius: 11px;
+    background: linear-gradient(rgb(230, 230, 230, 0.4), rgb(136, 178, 255, 0.2));
+    color: azure;
+    min-height: 140px;
+    width: 285px;
+    padding: 5px 5px;
+}
+
+.widget-block {
+    /* display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px 5px; */
+    margin: 20px auto;
+    width: 98%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px 15px;
+    justify-content: center;
+}
+
+.current-weather,
+.search-zone {
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.search-bar {
+    border-radius: 180px;
+    padding: 5px 15px;
+    min-width: 50%;
+    max-width: 50%;
+    background: rgba(1, 1, 4, 0.2);
+    border: 0px;
+    color: beige;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.search-bar::placeholder {
+    color: azure;
+}
+
+.search-icon {
+    color: "azure";
+    position: "absolute";
+    right: "35%";
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    cursor: pointer;
+}
+
+.foot-note {
+    position: fixed;
+    bottom:10px;
+}
+
+@media (max-width:767px) {
+    .current-weather>.city-widget {
+
+        width: 90%;
+    }
+
+    .search-bar:focus {
+        min-width: 90%;
+    }
+
+    .search-bar:focus+.search-icon {
+        right: 20%
+    }
+}
+
+.jma-pdg-8 {
+    padding: 8px 8px;
+}
+
+.jma-pdg-16 {
+    padding: 16px 16px;
+}
+
+.jma-pdg-32 {
+    padding: 32px 32px;
+}
+
+.jma-pdg-64 {
+    padding: 64px 64px;
+}
+
+.jma-pdg-top {
+    padding-top: 16px;
+}
+
+.jma-pdg-bottom {
+    padding-bottom: 16px;
+}
+
+.fading {
+    animation: anime-fading 3s ease 0s 1 alternate none running;
+}
+
+@keyframes anime-fading {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.anime-opacity {
+    animation: anime-opac 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0s infinite normal none running;
+}
+
+@keyframes anime-opac {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
